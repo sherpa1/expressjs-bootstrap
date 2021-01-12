@@ -5,7 +5,7 @@ const error_handler = (err, req, res, next) => {
 
     if (process.env.NODE_ENV === "production") err.message = "";
 
-    return res.sendStatus(500);
+    return res.status(500).json({ message: err.message });
 
 }
 
